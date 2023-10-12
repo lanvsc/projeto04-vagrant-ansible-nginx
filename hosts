@@ -1,0 +1,10 @@
+[db_01]
+Debian ansible_host=192.168.100.113 
+
+[filial_01:children]
+db_01
+
+[filial_01:vars]
+ansible_user=root 
+ansible_password=123456
+ansible_port=22

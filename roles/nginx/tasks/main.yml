@@ -1,0 +1,14 @@
+---
+- name : Instalando Nginx
+  apt: name=nginx state-latest
+
+- name: Copiando arquivo de configuração
+  copy: src=default.conf dest=/etc/nginx/conf.d/
+
+- name: Copiando arquivo index.html
+  template: src=index.html dest=/var/www/html
+
+- name: Iniciando serviço Nginx
+  service: name=nginx status=restarted
+
+...
